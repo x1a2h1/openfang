@@ -1344,7 +1344,7 @@ impl OpenFangKernel {
                 recalled_memories: vec![],
                 skill_summary: self.build_skill_summary(&manifest.skills),
                 skill_prompt_context: self.collect_prompt_context(&manifest.skills),
-                mcp_summary: if mcp_tool_count >= 3 {
+                mcp_summary: if mcp_tool_count > 0 {
                     self.build_mcp_summary(&manifest.mcp_servers)
                 } else {
                     String::new()
@@ -1792,7 +1792,7 @@ impl OpenFangKernel {
                 recalled_memories: vec![], // Recalled in agent_loop, not here
                 skill_summary: self.build_skill_summary(&manifest.skills),
                 skill_prompt_context: self.collect_prompt_context(&manifest.skills),
-                mcp_summary: if mcp_tool_count >= 3 {
+                mcp_summary: if mcp_tool_count > 0 {
                     self.build_mcp_summary(&manifest.mcp_servers)
                 } else {
                     String::new()
