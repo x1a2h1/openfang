@@ -101,6 +101,14 @@ const PROVIDERS: &[ProviderInfo] = &[
         hint: "",
     },
     ProviderInfo {
+        name: "volcengine_coding",
+        display: "Volcengine Coding",
+        env_var: "VOLCENGINE_API_KEY",
+        default_model: "ark-code-latest",
+        needs_key: true,
+        hint: "",
+    },
+    ProviderInfo {
         name: "ollama",
         display: "Ollama",
         env_var: "OLLAMA_API_KEY",
