@@ -59,6 +59,8 @@ pub enum ModelTier {
     Fast,
     /// Local models (Ollama, vLLM, LM Studio).
     Local,
+    /// User-defined custom models added at runtime.
+    Custom,
 }
 
 impl fmt::Display for ModelTier {
@@ -69,6 +71,7 @@ impl fmt::Display for ModelTier {
             ModelTier::Balanced => write!(f, "balanced"),
             ModelTier::Fast => write!(f, "fast"),
             ModelTier::Local => write!(f, "local"),
+            ModelTier::Custom => write!(f, "custom"),
         }
     }
 }
@@ -189,6 +192,7 @@ mod tests {
         assert_eq!(ModelTier::Balanced.to_string(), "balanced");
         assert_eq!(ModelTier::Fast.to_string(), "fast");
         assert_eq!(ModelTier::Local.to_string(), "local");
+        assert_eq!(ModelTier::Custom.to_string(), "custom");
     }
 
     #[test]
